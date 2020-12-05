@@ -1,0 +1,25 @@
+﻿@model RestauranteMexicano.Areas.ADM.Models.Produto
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="animated animatedFadeInUp fadeInUp">
+    <div class="tabela">
+        <br>
+        <div class="primeira">
+            <img src="~/Content/imagens/delete-confirmation.png" width="100%" height="100%" />
+        </div>
+        <div class="segunda">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <h3> Você realmente deseja deletar esse registro? </h3>
+                <br />
+                <input type="submit" value="Deletar" class="button" />
+
+                @Html.ActionLink("Voltar", "Index")
+            }
+        </div>
+    </div>
+</div>

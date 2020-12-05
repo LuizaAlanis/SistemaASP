@@ -1,0 +1,81 @@
+﻿@model RestauranteMexicano.Areas.Vendas.Models.Comanda
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="animated animatedFadeInUp fadeInUp">
+    <div class="tabela">
+        <br>
+        <div class="primeira">
+            <img src="~/Content/imagens/reservas.jpg" width="100%" height="100%" />
+        </div>
+        <div class="segunda">
+            <h2>Faça o pedido</h2>
+            <br /><br />
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                @Html.LabelFor(model => model.id, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.id, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.id, "", new { @class = "text-danger" })
+
+                @Html.LabelFor(model => model.data, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.data, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.data, "", new { @class = "text-danger" })
+
+                @Html.LabelFor(model => model.total, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.total, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.total, "", new { @class = "text-danger" })
+
+
+                @Html.LabelFor(model => model.idMesa, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.idMesa, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.idMesa, "", new { @class = "text-danger" })
+
+
+                @Html.LabelFor(model => model.idFuncionario, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.idFuncionario, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.idFuncionario, "", new { @class = "text-danger" })
+
+                <input type="submit" class="button" style="padding:10px;" value="Gravar" />
+                @Html.ActionLink("Back to List", "Index")
+            }
+        </div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+            <script src="~/Scripts/mouse.js"></script>
+        }
+
+    </div>
+</div>
+
+
+
+@*
+    Div oculto / opção adicional
+
+    <label for='div1'>Delivery</label>
+    <input type='radio' id='div1' name='consulta[]' value='1'>
+
+    <div id='m1'>
+        <br />
+        @Html.LabelFor(EXEMPLO)
+        @Html.EditorFor(EXEMPLO)
+    </div>
+
+
+    <label for='div2'>Comanda</label>
+    <input type='radio' id='div2' name='consulta[]' value='2'>
+
+    <div id='m2'>
+        <br />
+        @Html.LabelFor(EXEMPLO)
+        @Html.EditorFor(EXEMPLO)
+    </div>
+*@

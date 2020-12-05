@@ -1,0 +1,44 @@
+﻿@model RestauranteMexicano.Areas.ADM.Models.Relatorio
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="animated animatedFadeInUp fadeInUp">
+    <div class="tabela">
+        <br>
+        <div class="primeira">
+            <img src="~/Content/imagens/relatorio.SVG" width="100%" height="100%" />
+        </div>
+        <div class="segunda">
+            @using (Html.BeginForm())
+             {
+                @Html.AntiForgeryToken()
+         
+                @Html.LabelFor(model => model.dataRelatorio, htmlAttributes: new { @class = "control-label col-md-2" })          
+                @Html.EditorFor(model => model.dataRelatorio, new { htmlAttributes = new { @class = "form-control" } })
+         
+                @Html.LabelFor(model => model.autor, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.autor, new { htmlAttributes = new { @class = "form-control" } })
+                       
+                @Html.LabelFor(model => model.departamento, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.departamento, new { htmlAttributes = new { @class = "form-control" } })
+        
+                @Html.LabelFor(model => model.titulo, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.titulo, new { htmlAttributes = new { @class = "form-control" } })
+            
+                @Html.LabelFor(model => model.corpo, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.corpo, new { htmlAttributes = new { @class = "form-control" } })
+
+                <input type="submit" value="Cadastrar" class="button" function />
+
+                @Html.ActionLink("Visualizar todos", "Index")
+
+                @section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                }
+
+             }
+        </div>
+    </div>
+</div>

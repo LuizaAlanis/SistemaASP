@@ -1,0 +1,43 @@
+﻿@model RestauranteMexicano.Areas.Vendas.Models.Itens
+
+@{
+    ViewBag.Title = "AdicionarItens";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AdicionarItens</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+   
+            @Html.LabelFor(model => model.idPedido, htmlAttributes: new { @class = "control-label col-md-2" })
+          
+                @Html.EditorFor(model => model.idPedido, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.idPedido, "", new { @class = "text-danger" })
+
+            @Html.LabelFor(model => model.idProduto, htmlAttributes: new { @class = "control-label col-md-2" })
+  
+                @Html.EditorFor(model => model.idProduto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.idProduto, "", new { @class = "text-danger" })
+  
+
+            @Html.LabelFor(model => model.valorUnitario, htmlAttributes: new { @class = "control-label col-md-2" })
+         
+                @Html.EditorFor(model => model.valorUnitario, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.valorUnitario, "", new { @class = "text-danger" })
+
+            @Html.LabelFor(model => model.quantidade, htmlAttributes: new { @class = "control-label col-md-2" })
+     
+                @Html.EditorFor(model => model.quantidade, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.quantidade, "", new { @class = "text-danger" })
+
+
+                <input type="submit" value="Create" class="btn btn-default" />
+
+}
+
+    @Html.ActionLink("Back to List", "Index")
+

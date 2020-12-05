@@ -1,0 +1,44 @@
+﻿@model RestauranteMexicano.Areas.Vendas.Models.Reserva
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="animated animatedFadeInUp fadeInUp">
+    <div class="tabela">
+        <br>
+        <div class="primeira">
+            <!-- <a href='https://www.freepik.com/vectors/food'>Food vector created by freepik - www.freepik.com</a> -->
+            <img src="~/Content/imagens/reservas.jpg" width="100%" height="100%" />
+        </div>
+        <div class="segunda">
+            @using (Html.BeginForm())
+             {
+
+                @Html.LabelFor(model => model.idMesa, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.idMesa, new { htmlAttributes = new { @class = "form-control" } })
+
+                @Html.LabelFor(model => model.quantidadeCadeiras, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.quantidadeCadeiras, new { htmlAttributes = new { @class = "form-control" } })
+
+                @Html.LabelFor(model => model.dataReserva, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.dataReserva, new { htmlAttributes = new { @class = "form-control" } })
+
+                @Html.LabelFor(model => model.hora, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.hora, new { htmlAttributes = new { @class = "form-control" } })
+
+                @Html.LabelFor(model => model.idCliente, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.idCliente, new { htmlAttributes = new { @class = "form-control" } })
+
+                <input type="submit" value="Cadastrar" class="button" function />
+
+                @Html.ActionLink("Visualizar todos", "Index")
+
+                @section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                }
+
+             }
+        </div>
+    </div>
+</div>
